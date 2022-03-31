@@ -37,7 +37,7 @@ void guiTask(void *pvParameter)
     disp_drv.ver_res = CONFIG_LV_VER_RES_MAX;
     disp_drv.flush_cb = disp_driver_flush;
     disp_drv.draw_buf = &draw_buf;
-    disp_drv.rotated = LV_DISP_ROT_270;
+    disp_drv.rotated = LV_DISP_ROT_90;
     // disp_drv.sw_rotate = 1;
     lv_disp_drv_register(&disp_drv);
 

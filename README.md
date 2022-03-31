@@ -22,22 +22,23 @@ cd components
 
 git clone https://github.com/lvgl/lvgl.git
 
-git clone https://github.com/lvgl/lvgl_esp32_drivers.git -b develop
+git clone https://github.com/lvgl/lvgl_esp32_drivers.git
 
 ## menuconfig
 
-进入项目根路径下
-
+```sh
+# 进入项目根路径下
 idf.py set-target esp32-c3
-
 idf.py menuconfig
 
-就能在组件中, 最后面 可以看到 lvgl 组件
-
-配置 常用的， 水平/垂直  Pins 等
-
-## 配置文件
-
-cp lvgl/lv_conf_template.h lv_conf.h
-
-修改
+# 就能在组件中, 最后面 可以看到 lvgl 组件
+# 1. LVGL ESP Drivers
+#   TTF Display
+#   水平分辨率: 132
+#   垂直分辨率: 162
+#   选择一个显示控制器模型: ST7725S
+#   分配 Display Pin:
+#       RES:9 CS:10 SCL:4 SDA:6 DC:8
+#   使用预定的buffer size, 默认设置的buffer可能会溢出
+#   
+```
